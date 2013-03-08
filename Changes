@@ -1,0 +1,7 @@
+Revision history for Math-KullbackLeibler-Discrete
+
+0.01    Fri Mar  8 18:35:23 WET 2013
+        First version, released on an unsuspecting world.
+        - includes kl function is basic implementation.
+        - need further testing.
+

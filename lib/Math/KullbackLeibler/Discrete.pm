@@ -11,18 +11,21 @@ our @EXPORT = qw(kl);
 
 =head1 NAME
 
-Math::KullbackLeibler::Discrete - Computes Kullback-Leibler divergence for two discrete samples.
+Math::KullbackLeibler::Discrete - Computes Kullback-Leibler divergence for two discrete distributes.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
+
+This module computes Kullback-Leibler divergence for two discrete
+distributions, using smoothing.
 
     use Math::KullbackLeibler::Discrete;
 
@@ -31,9 +34,17 @@ our $VERSION = '0.01';
 
     my $kl = kl( $P, $Q );
 
+    # optionally set the smoothing epsilon
+    my $kl2 = kl( $P, $Q, epsilon => 0.0001 );
+
+    # setting epsilon to 0 results in no smoothing.
+    my $kl3 = kl( $P, $Q, epsilon => 0 );
+
 =head1 EXPORT
 
 =head2 kl
+
+Computes smoothed KL.
 
 Receives two mandatory arguments: two anonymous hashrefs, that map
 events to their probabilities.
@@ -41,13 +52,22 @@ events to their probabilities.
 Implementation based on the description presented at
 L<http://www.cs.bgu.ac.il/~elhadad/nlp09/KL.html>.
 
+The smoothing amount can be specified as parameter:
+
+   kl( $P, $Q, epsilon => 0.001 );
+
+This makes it possible to turn of smoothing, defined epsilon as
+zero. However, notice that this will lead to errors in case of
+divergent domains.
 
 =cut
 
 sub kl {
-    my ($P, $Q) = @_;
+    my ($P, $Q, %opts) = @_;
 
     my $eps = 0.00001;
+
+    $eps = $opts{epsilon} if exists $opts{epsilon};
 
     # Universe
     my $SU = {};

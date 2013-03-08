@@ -1,5 +1,5 @@
 {
-   "abstract" : "Computes Kullback-Leibler divergence for two discrete samples.",
+   "abstract" : "Computes Kullback-Leibler divergence for two discrete distributes.",
    "author" : [
       "Alberto Simoes <ambs@cpan.org>"
    ],
@@ -28,7 +28,7 @@
    "provides" : {
       "Math::KullbackLeibler::Discrete" : {
          "file" : "lib/Math/KullbackLeibler/Discrete.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -37,5 +37,5 @@
          "http://www.perlfoundation.org/artistic_license_2_0"
       ]
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }

@@ -5,3 +5,5 @@ Revision history for Math-KullbackLeibler-Discrete
         - includes kl function is basic implementation.
         - need further testing.
 
+0.02    Fri Mar  8 20:17:58 WET 2013
+        - Add epsilon option to set smoothing amount.

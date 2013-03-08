@@ -2,7 +2,7 @@
 use 5.006;
 use strict;
 use warnings FATAL => 'all';
-use Test::More tests => 4;
+use Test::More tests => 6;
 
 BEGIN {
     use_ok( 'Math::KullbackLeibler::Discrete' ) || print "Bail out!\n";
@@ -24,3 +24,8 @@ my $Q = { a => 7/12,
 is( kl($P, $P), 0);
 is( kl($Q, $Q), 0);
 is( int(kl($Q, $P)), 2);
+
+is( kl($P, $P, epsilon => 0), 0);
+
+eval { kl($Q, $P, epsilon => 0) };
+like $@ => qr/Can't take log of 0/;

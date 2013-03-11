@@ -23,12 +23,18 @@
          "requires" : {
             "Module::Build" : "0"
          }
+      },
+      "runtime" : {
+         "requires" : {
+            "Exporter" : "0",
+            "parent" : "0"
+         }
       }
    },
    "provides" : {
       "Math::KullbackLeibler::Discrete" : {
          "file" : "lib/Math/KullbackLeibler/Discrete.pm",
-         "version" : "0.03"
+         "version" : "0.04"
       }
    },
    "release_status" : "stable",
@@ -37,5 +43,5 @@
          "http://www.perlfoundation.org/artistic_license_2_0"
       ]
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }

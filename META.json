@@ -4,7 +4,7 @@
       "Alberto Simoes <ambs@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4203",
    "license" : [
       "artistic_2"
    ],
@@ -34,7 +34,7 @@
    "provides" : {
       "Math::KullbackLeibler::Discrete" : {
          "file" : "lib/Math/KullbackLeibler/Discrete.pm",
-         "version" : "0.05"
+         "version" : "0.06"
       }
    },
    "release_status" : "stable",
@@ -43,5 +43,5 @@
          "http://www.perlfoundation.org/artistic_license_2_0"
       ]
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }
